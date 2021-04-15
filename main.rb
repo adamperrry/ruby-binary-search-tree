@@ -4,6 +4,9 @@ require_relative 'tree'
 arr = Array.new(15) { rand(1..100) }
 tree = Tree.new(arr.shuffle)
 
+puts 'Tree:'
+tree.pretty_print
+
 puts "Balanced?: #{tree.balanced?}"
 puts "Level order: #{tree.level_order}"
 puts "Preorder: #{tree.preorder}"
@@ -11,10 +14,13 @@ puts "Postorder: #{tree.postorder}"
 puts "Inorder: #{tree.inorder}"
 puts
 
-new_values = [123, 234, 345, 456, 567, 678, 789, 890]
+new_values = [123, 234, 345, 456]
 new_values.each { |i| tree.insert(i) }
 puts "Unbalancing with insertion of these values: #{new_values}"
 puts
+
+puts 'Tree:'
+tree.pretty_print
 
 puts "Balanced?: #{tree.balanced?}"
 puts
@@ -22,6 +28,9 @@ puts
 tree.rebalance
 puts 'Rebalancing...'
 puts
+
+puts 'Tree:'
+tree.pretty_print
 
 puts "Balanced?: #{tree.balanced?}"
 puts "Level order: #{tree.level_order}"
